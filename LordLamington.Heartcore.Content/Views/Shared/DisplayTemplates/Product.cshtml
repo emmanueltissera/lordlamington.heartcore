@@ -1,0 +1,24 @@
+﻿@model Product
+
+<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+    <div class="ck_elem_slide_img_wrapper float_left">
+        <div class="ck_elem_slide_img float_left">
+            <img src="@Model.ProductImage.Url?width=300&height=200&mode=crop" alt="img">
+            <h5>$ @Model.Price</h5>
+        </div>
+        <div class="ck_elem_slide_img_cont float_left">
+            <div class="ck_elem_star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h3>@Model.Title</h3>
+            @Model.Description
+            <div class="ck_bc_btn float_left">
+                <a href="@Model.Url">Details</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Product
+
+<div class="ck_bc_main_wrapper float_left"  id="page-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>@Model.Title</h1>
+                <div class="ck_elem_slide_img float_left">
+                    <img src="@Model.ProductImage.Url" alt="img">
+                    <h5>$ @Model.Price</h5>
+                </div>
+                <div class="ck_elem_slide_img_cont float_left">
+                    <div class="ck_elem_star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    @Model.Description
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

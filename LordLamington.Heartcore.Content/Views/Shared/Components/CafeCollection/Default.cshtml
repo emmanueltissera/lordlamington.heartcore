@@ -1,0 +1,17 @@
+﻿@model CafeCollection
+
+<div class="ck_bc_main_wrapper float_left" id="page-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ck_heading_new_center_wrapper float_left">
+                    <h1>@Model.Title</h1>
+                </div>
+            </div>
+            @foreach (var cafe in Model.Cafes)
+            {
+                <text>@Html.DisplayFor(x => cafe)</text>
+            }
+        </div>
+    </div>
+</div>

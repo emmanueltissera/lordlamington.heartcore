@@ -1,0 +1,27 @@
+﻿@model ProductCollection
+
+<div class="ck_bc_main_wrapper float_left" id="page-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ck_heading_new_center_wrapper float_left">
+                    <h4>@Model.SubTitle</h4>
+                    <h3>@Model.Title</h3>
+                </div>
+            </div>
+            @foreach (var product in Model.Products)
+            {
+                <text>@Html.DisplayFor(x => product)</text>
+            }
+
+            @if (!Model.IsCollectionPage)
+            {
+                <div class="col-md-12">
+                    <div class="ck_new_btn ck_new_btn_bc">
+                        <a href="@Model.Url">Shop More</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
