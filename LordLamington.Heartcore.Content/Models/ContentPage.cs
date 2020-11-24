@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CaaS = Umbraco.Headless.Client.Net.Delivery.Models;
-using LordLamington.Heartcore.Content.Services;
 using StazorPages.Heartcore.Extensions;
 using StazorPages.Heartcore.Models;
 using StazorPages.Heartcore.Models.Grid;
@@ -24,16 +23,14 @@ namespace LordLamington.Heartcore.Content.Models
 
         public static ContentPage MapToType(CaaS.Content content)
         {
-            return new ContentPage
+            var model = new ContentPage
             {
                 Title = content.Value<string>("title"),
                 BodyText = content.Value<UmbracoGrid>("bodyText"),
                 HeroImage = content.Value<CaaS.Image>("heroImage"),
-                Url = content.Url.ToSafeUrl(),
-                Name = content.Name,
-                isVisible = content.IsVisible()
             };
-
+            model.MapCommonProperties(content);
+            return model;
         }
     }
 }

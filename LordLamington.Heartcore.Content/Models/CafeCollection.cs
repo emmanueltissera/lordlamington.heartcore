@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using CaaS = Umbraco.Headless.Client.Net.Delivery.Models;
 using StazorPages.Heartcore.Extensions;
-using LordLamington.Heartcore.Content.Services;
 using StazorPages.Heartcore.Models;
 using StazorPages.Models;
 using StazorPages.Routing;
@@ -26,15 +25,13 @@ namespace LordLamington.Heartcore.Content.Models
 
         public static CafeCollection MapToType(CaaS.Content content)
         {
-            return new CafeCollection
+            var model = new CafeCollection
             {
                 Title = content.Value<string>("title"),
                 BodyText = content.Value<string>("bodyText"),
-                Url = content.Url.ToSafeUrl(),
-                Name = content.Name,
-                isVisible = content.IsVisible()
             };
-
+            model.MapCommonProperties(content);
+            return model;
         }
     }
 }

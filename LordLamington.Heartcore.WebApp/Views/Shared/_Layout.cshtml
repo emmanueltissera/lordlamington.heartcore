@@ -92,7 +92,7 @@
                         <p>
                             @string.Format("Copyright © {0} Lord Lamington. All Rights Reserved.", DateTime.Now.Year)
                         </p>
-                        <small>Rendered at @DateTime.Now.ToString("dd-MMM-yy HH:mm:ss")</small>
+                        <small>Stazor Page generated at @DateTime.Now.ToUniversalTime().ToString("dd-MMM-yyyy HH:mm:ss UTC")</small>
                     </div>
                 </div>
             </div>

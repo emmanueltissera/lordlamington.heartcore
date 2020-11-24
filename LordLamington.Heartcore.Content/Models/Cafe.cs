@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CaaS = Umbraco.Headless.Client.Net.Delivery.Models;
-using LordLamington.Heartcore.Content.Services;
 using StazorPages.Heartcore.Extensions;
 using StazorPages.Heartcore.Models;
 using StazorPages.Models;
@@ -31,7 +30,7 @@ namespace LordLamington.Heartcore.Content.Models
 
         public static Cafe MapToType(CaaS.Content content)
         {
-            return new Cafe
+            var model = new Cafe
             {
                 Title = content.Name,
                 BuildingNumber = content.Value<string>("buildingNumber"),
@@ -39,12 +38,10 @@ namespace LordLamington.Heartcore.Content.Models
                 AddressLine2 = content.Value<string>("addressLine2"),
                 Suburb = content.Value<string>("suburb"),
                 Postcode = content.Value<string>("postcode"),
-                State = content.Value<string>("state"),
-                Url = content.Url.ToSafeUrl(),
-                Name = content.Name,
-                isVisible = content.IsVisible()
+                State = content.Value<string>("state")
             };
-
+            model.MapCommonProperties(content);
+            return model;
         }
     }
 }

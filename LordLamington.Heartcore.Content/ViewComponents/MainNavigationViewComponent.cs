@@ -2,11 +2,11 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using LordLamington.Heartcore.Content.Models;
-using LordLamington.Heartcore.Content.Services;
 using LordLamington.Heartcore.Content.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using StazorPages.Heartcore;
 using StazorPages.Heartcore.Extensions;
+using StazorPages.Heartcore.Services;
 using CaaS = Umbraco.Headless.Client.Net.Delivery.Models;
 
 namespace LordLamington.Heartcore.Content.ViewComponents
