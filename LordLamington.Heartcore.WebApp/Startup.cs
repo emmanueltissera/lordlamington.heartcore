@@ -51,7 +51,14 @@ namespace LordLamington.Heartcore.WebApp
 
             app.UseAuthorization();
 
-            app.UseStazorPages(env);
+            if (env.IsDevelopment())
+            {
+                app.UseStazorPagesInDevelopment(env);
+            }
+            else
+            {
+                app.UseStazorPages(env);
+            }
 
             app.UseEndpoints(endpoints =>
             {
